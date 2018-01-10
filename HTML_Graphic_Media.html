@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<!-- HTML GRAPHIC & MEDIA  -->
+<html lang=en>
+<head>
+<title>HTML GRAPHIC & MEDIA</title>
+<link rel="stylesheet"  href="style.css"> 
+
+<!-- Navv -->
+<div class="UI_NavBar">
+ <ul id="Alert">
+  <li><a href= "Index.html">Home</a></li>   
+  <li><a>Contact</a></li>
+  <li><a href= "About_Usability&Accessibility.html">About</a></li>
+ </ul>
+</div>
+
+<!-- Banner SVG_Logo-->
+<div class= "SVG_Media">
+<canvas id="canvas_demo">
+</canvas>
+<svg id=SVG_Logo height="130" width="500">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"
+      style="stop-color:#FFF857;stop-opacity:1" />
+      <stop offset="100%"
+      style="stop-color:#C90745;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <ellipse cx="100" cy="70" rx="850" ry="550" fill="url(#grad1)" />
+  <text fill="#ffffff" font-size="45" font-family="Verdana"
+  x="50" y="75">Graphics & Media</text>.
+</svg>
+
+<!-- Media - Video-->
+<video id=StockFootage width="720" height="480" controls loop muted autoplay >
+	<source src="img\img_Graphics\Stock_Footage.mp4" type="video/mp4">
+</video>
+
+<!-- Media - Audio-->
+<svg id=SVG_Audio_Title height="100" width="300"> 
+	<rect width="300" height="100" style="fill:rgb(201,7,69);stroke-width:1;stroke:rgb(0,0,0)" />
+	<text fill="#ffffff" font-size="15" font-family="Verdana"
+	x="10" y="50">Something Elated By: Broke For Free</text>
+</svg>
+<audio id=StockAudio controls>
+	<source src="img\img_Graphics\Broke_For_Free.mp3" type="audio/mpeg">
+</audio>
+
+</div>
+</head>
+<body>
+<!-- Feild Report PDF-->
+<object  data="archive/Field_Report.pdf" width="50%" height="100%">
+This browser does not support PDFs. Please download the PDF to view it: <a href="/pdf/sample-3pp.pdf">Download PDF</a>
+<p>Alternative text - include a link <a href="myfile.pdf">to the PDF!</a></p>
+</object>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script  src="script/JS_HTML_GRAPHIC.js"></script>
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE HTML>
+<!-- JS Project  -->
+<html lang=en>
+<title>JS Project</title>
+<link rel="stylesheet"  href="style.css"> 
+
+<!-- Navv -->
+<div class="UI_NavBar">
+ <ul id="Alert">
+  <li><a href= "Index.html">Home</a></li>   
+  <li><a>Contact</a></li>
+  <li><a href= "About_Usability&Accessibility.html">About</a></li>
+ </ul>
+</div>
+
+<body>
+<!-- Banner -->
+<div class = "JSTitle">
+	<h1>JavaScript Tools</h1>
+</div>
+<!-- Container -->
+<div id = "JSTools">
+
+<!-- Project Block 1 Name Input-->
+<div class= "JSBlock">
+	<h2>(#1) User Input Form</h2>
+	<p>Enter your name.</p>
+	<form> <label for="Name"> Name:</label> <input type="text" id="Name" value=""> </form>
+	<button id="btn_name" onclick="Nameinput()">Enter</button>
+	<p id=UserName>Name:</p>
+<!-- TEXT-->
+<h3>(Problem Statement)	</h3> <h4>Create a input field to collect and display the User's name. </h4><h3>(Pseudocode)</h3><h4> Input feild:[string] <br>onEvent - Function Nameinput ()<br> var Name = [string] <br> Display ["Name"]<br> <br></h4>
+	
+	<button onclick="w3.toggleShow('#JSTools_1')">Hide/Show Solution</button>
+	<div id="JSTools_1" class = "Solution"  style="display: none;">
+	
+<h3>(Solution)	</h3><h4> function Nameinput() { <br>
+var name = document.getElementById('Name');<br>
+alert("Hello " + name.value);<br>
+document.getElementById("UserName").innerHTML = "Name: " + name.value;
+<!-- /TEXT-->
+}</h4>
+</div>
+</div>
+
+<!-- Project Block 2 Math Game-->
+<div class= "JSBlock">
+	<h2> (#2) Random Math Game</h2>
+	<div id=MGStartBTN>
+	<button onclick="RandomMGStart()">Start</button>
+	</div>
+<table style="width:25%">
+<tr>
+	<td id="num1LB"></td>
+	<td id="OPLB"></td>
+	<td id="num2LB"></td>
+	<td> <form> <label for="InputRMG">Math Game</label>  <input type="text" style="width:100%" id=InputRMG value=""></td> </form>
+	<td> <button onclick="SubmitRMG()">Enter</button></td>
+</tr>
+</table>
+	<p id=scoreLB></p>  
+	<p id=attemptsLB></p> 
+	<!-- TEXT-->
+<h3>(Problem Statement)	</h3>
+<h4> Create math equations where the values and operations changes randomly.</h4>
+<h3>(Pseudocode)</h3> 
+<h4>OnEvent - function RandomMGStart(){<br> [num1] = random#(1-9) <br> [num2] = random#(1-9) <br>[OP] = random#(0-5)<br> Create cases for OP[#]: EX. Case 0 [Num1 + Num2 = Key] .Case 1 [Num1 - Num2 = Key]...
+<br> Compare [input = key]
+<br>If [input = key] Score +1; [else] attempts_left -1; 
+<br>If (attempts_left = 0) reset; <br> <br> </h4>
+
+	<button onclick="w3.toggleShow('#JSTools_2')">Hide/Show Solution</button>
+	<div id="JSTools_2" class = "Solution"  style="display: none;">
+	
+<h3>(Solution)	</h3><h4>function RandomMGStart(){<br>
+MGStartBTN.style.visibility = "hidden";<br>
+var num1 = Math.floor((Math.random() * 9) + 1);<br>
+document.getElementById("num1LB").innerHTML= num1;<br>
+var num2 = Math.floor((Math.random() * 9) + 1);<br>
+document.getElementById("num2LB").innerHTML= num2 + " =";<br>
+var OP =Math.floor((Math.random("OPLB") * 5) + 1);<br>
+switch (OP){<br>
+case 1:<br>
+OP = "+";<br>
+key = num1 + num2;<br>
+break;<br>
+case 2:<br>
+OP = "-";<br>
+key = num1 - num2;<br>
+break;<br>
+case 3:<br>
+OP = "*";<br>
+key = num1 * num2;<br>
+break;....<br>document.getElementById("OPLB").innerHTML= OP;}<br><br>
+function SubmitRMG(){<br>
+var input = document.getElementById('InputRMG').value;<br>	
+if (input == key){<br>
+scoreK += 1;<br>
+attempts= 2;<br>
+RandomMGStart();<br>
+}else{<br>
+attempts -=1;<br>}
+if (attempts < 1){<br>
+RandomMGStart();<br>
+attempts= 2;<br><br>}
+document.getElementById("scoreLB").innerHTML="Score: " + scoreK;<br>
+document.getElementById("attemptsLB").innerHTML="Attempts left: " + attempts;<br>}</h4>
+<!-- /TEXT-->
+</div>
+</div>
+
+<!-- Project Block 3 Bubblesort-->
+<div class= "JSBlock">
+<h2>(#3) BubbleSort</h2>
+	<form> <label for="BubbleSortIP"> Bubble Sort:</label> 
+	<input type="text" id=BubbleSortIP></form> <button onclick="BubbleSortStart()">Sort</button></p>
+	<p id=BubbleSortLB></p>
+	
+<!--TEXT-->
+<h3> (Problem Statement) </h3> <h4>Organize any given list to be in ascending order.</h4>
+<h3> (Pseudocode) </h3> <h4>Input [Unorder_list] <br> onEvent - function BubbleSortStart(){ <br> "Split" [Unorder_list] into an array when it incounters " "<br>
+Create a "For Loop" and a reference  point [temp].<br>
+If [I > I+1], temp = I <br>
+I = I+1;
+I+1 = temp; <br> <br></h4>
+
+	<button onclick="w3.toggleShow('#JSTools_3')">Hide/Show Solution</button>
+	<div id="JSTools_3" class = "Solution"  style="display: none;">
+
+<h3> (Solution) </h3> <h4>function BubbleSortStart(){<br>
+var BubbleSortList = document.getElementById("BubbleSortIP").value;<br>
+var Splitter = BubbleSortList.split(" ");<br><br>
+for (var i = 0; i GT Splitter.length-1; i++){<br>
+for (var x = 0; x GT Splitter.length-1; x++){<br>
+if (parseInt(Splitter[x]) > parseInt(Splitter[x+1])){<br>
+var temp = Splitter[x];<br>
+Splitter[x] = Splitter[x+1];<br>
+Splitter[x+1] = temp;<br>}}}<br>
+document.getElementById("BubbleSortLB").innerHTML="( "+Splitter+" )";<br>}</h4>
+<!-- /TEXT-->
+</div>
+</div>
+
+<!-- Project Block 4 RPS-->
+<div class ="JSBlock">
+<h2>  (#4) Rock, Paper, Scissor </h2>
+<h4>
+<table style="width:25%">
+  <button id="RPSBTNRock" value="Rock" onclick="RPSStartRock()">Rock</button>
+  <button id="RPSBTNPaper" value="Paper" onclick="RPSStartPaper()">Paper</button> 
+  <button id="RPSBTNScissor" value="Scissor" onclick="RPSStartScissor()">Scissor</button>
+<tr>
+<td>
+<!-- Layout-->
+<p id=Player></p>
+</td>
+<td>
+</td>
+<td>
+<p id=Computer></p>
+</td>
+</tr>
+<tr>
+<td>
+<p id=RPSInput></p>
+</td>
+<td>
+<p id=VS></p>
+</td>
+<td>
+<p id=RPSComputer></p>
+</td>
+</tr>
+
+</table>
+
+<ul>
+<li><p id=Player_ScoreLB></p></li>
+<li><p id=Computer_ScoreLB></p></li>
+</ul>
+</h4>
+<!-- TEXT-->
+<h3>(Problem Statement)	</h3> <h4>Create a Rock, Paper, Scissor game against a computer.</h4>
+<h3>(Pseudocode)</h3> <h4>Create 3 buttons that hold 3 different values [Rock, Paper, Scissor] <br> Var User_Input = Value[]
+<br> Create random Computer_Output <br> Compare outcomes for(User_Input.value)to(Computer's Output.value)<br> <br></h4>
+
+	<button onclick="w3.toggleShow('#JSTools_4')">Hide/Show Solution</button>
+	<div id="JSTools_4" class = "Solution"  style="display: none;">
+	
+<h3>(Solution)</h3><h4>function RPSStartRock(){<br>
+var RPSInput = document.getElementById('RPSBTNRock').value;<br>
+RPS(RPSInput);}<br><br>
+function RPSStartPaper(){<br>
+var RPSInput = document.getElementById('RPSBTNPaper').value;<br>
+RPS(RPSInput);}<br><br>
+function RPSStartScissor(){<br>
+var RPSInput = document.getElementById('RPSBTNScissor').value;<br>
+RPS(RPSInput);}<br><br>
+var Player_Score =0;<br>
+var Computer_Score =0;<br><br>
+function RPS(Input){<br>
+var RPSCOM = Math.floor(Math.random() * 3);<br><br>
+switch (RPSCOM){<br>
+case 0:<br>
+RPSCOM = "Rock";<br>
+break;<br>
+case 1:<br>
+RPSCOM = "Paper";<br>
+break;<br>
+case 2:<br>
+RPSCOM = "Scissor";<br>
+break;}<br><br>
+document.getElementById("RPSInput").innerHTML=Input.fontsize(2);<br>
+document.getElementById("VS").innerHTML="VS.";<br>
+document.getElementById("RPSComputer").innerHTML=RPSCOM.fontsize(2);<br><br>	
+if (Input=="Paper" && RPSCOM=="Rock"){<br>
+document.getElementById("RPSInput").innerHTML=Input.fontsize(5);<br>
+Player_Score+=1}<br>
+if (Input=="Rock" && RPSCOM=="Paper"){<br>
+document.getElementById("RPSComputer").innerHTML=RPSCOM.fontsize(5);<br>
+Computer_Score+=1}<br><br>
+if (Input=="Rock" && RPSCOM=="Scissor"){<br>
+document.getElementById("RPSInput").innerHTML=Input.fontsize(5);<br>
+Player_Score+=1}<br>
+if(Input=="Scissor" && RPSCOM=="Rock"){<br>
+document.getElementById("RPSComputer").innerHTML=RPSCOM.fontsize(5);<br>
+Computer_Score+=1}<br><br>
+if (Input=="Scissor" && RPSCOM=="Paper"){<br>
+document.getElementById("RPSInput").innerHTML=Input.fontsize(5);<br>
+Player_Score+=1}<br>
+if(Input=="Paper" && RPSCOM=="Scissor"){<br>
+document.getElementById("RPSComputer").innerHTML=RPSCOM.fontsize(5);<br>
+Computer_Score+=1}<br><br>	
+document.getElementById("Player").innerHTML="Player";<br>
+document.getElementById("Computer").innerHTML="Computer";<br>
+document.getElementById("Player_ScoreLB").innerHTML="Player's Score " +Player_Score ;<br>
+document.getElementById("Computer_ScoreLB").innerHTML="Computer's Score "+ Computer_Score;}<br>
+<!-- /TEXT-->
+ </h4>
+</div>
+</div>
+<!-- Project Block 5 Tic Tac Toe-->
+<!--
+<div class ="JSBlock">
+
+<h2> Tic Tac Toe(WIP)</h2>
+<table >
+ <tr>
+	<td id=SQ0> <button  onclick="SquareChange(0)">-</button></td>
+	<td id=SQ1> <button onclick="SquareChange(1)">-</button></td>
+	<td id=SQ2> <button onclick="SquareChange(2)">-</button></td>
+</tr>
+ <tr>
+	<td id=SQ3> <button onclick="SquareChange(3)">-</button></td>
+	<td id=SQ4> <button onclick="SquareChange(4)">-</button></td>
+	<td id=SQ5> <button onclick="SquareChange(5)">-</button></td>
+</tr>
+ <tr>
+	<td id=SQ6> <button onclick="SquareChange(6)">-</button></td>
+	<td id=SQ7> <button onclick="SquareChange(7)">-</button></td>
+	<td id=SQ8> <button onclick="SquareChange(8)">-</button></td>
+</tr>
+ </table>
+
+</div>
+<div id ="FutureIdeas";>
+<h2> Future ideas</h2>
+<p>Base Converter <br>Slide Show <br>Geo-Location & Weather <br></p>-->
+
+</div>
+</div>
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script  src="script/JS_Project.js"></script>
+</body>
+</html>
